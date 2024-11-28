@@ -1,0 +1,61 @@
+/* تعيين نمط عام للصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* تعيين صورة الخلفية */
+body {
+    background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+    background-size: cover;  /* التأكد من ملء الشاشة */
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تخصيص العنصر الحاوي */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* نصف شفافية الخلفية لجعل النص بارز */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* تنسيق النص */
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* تخصيص الزر */
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* تأثير عند مرور الفأرة فوق الزر */
+.btn:hover {
+    background-color: #e67e22;
+}

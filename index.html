@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brook Games</title>
+    <style>
+        /* تعيين نمط عام للصفحة */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        /* تعيين صورة الخلفية */
+        body {
+            background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* تخصيص العنصر الحاوي */
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* نصف شفافية الخلفية لجعل النص بارز */
+            padding: 40px 20px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%; /* جعلها أكثر مرونة */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* إضافة الشعار */
+        .logo {
+            width: 100px;  /* تحديد عرض الشعار */
+            margin-bottom: 20px;  /* إضافة مسافة أسفل الشعار */
+        }
+
+        /* تنسيق العنوان */
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        /* تنسيق النص */
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        /* تخصيص الزر الرئيسي */
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #FF0000; /* اللون الأحمر لليوتيوب */
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* تأثير عند مرور الفأرة فوق الزر الرئيسي */
+        .btn:hover {
+            background-color: #CC0000;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* تخصيص الزر الثانوي */
+        .secondary-btn {
+            background-color: #0073e6; /* لون أزرق */
+        }
+
+        .secondary-btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* تخصيص زر ديسكورد */
+        .discord-btn {
+            background-color: #7289da;
+        }
+
+        .discord-btn:hover {
+            background-color: #5a6eb7;
+        }
+
+        /* تخصيص نافذة التعليق المنبثقة */
+        .modal {
+            display: none; /* في البداية تكون مخفية */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* خلفية داكنة خلف النافذة */
+        }
+
+        /* محتوى النافذة المنبثقة */
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* زر إغلاق النافذة */
+        .close-btn {
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* تصميم زر إرسال التعليق */
+        .submit-btn {
+            background-color: #4CAF50; /* أخضر */
+            padding: 12px 25px;
+            color: white;
+            border-radius: 30px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* تخصيص تأثير الحركة عند التمرير */
+        .container:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* زر الإعدادات */
+        .settings-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* نافذة إعدادات اللغة */
+        .settings-modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .settings-content {
+            background-color: #fff;
+            margin: 20% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 60%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .settings-content button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-content button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- إضافة الشعار في الأعلى -->
+        <img src="https://cdn.discordapp.com/attachments/1308365777438638131/1311802173344055387/4661fad1d30b57bb.png?ex=674a2e7a&is=6748dcfa&hm=752876c811a010036f812b43909729b5e4fce2e99251fb8a655ea2aa6184818d&" alt="Logo" class="logo">
+
+        <h1>Hello To [ Brook Games]</h1>
+        <p>Welcome to my own site for the channel Youtube I am Yassin interested in Youtube publishing and exploring servers and explaining about them and focusing inside the MTE game I hope that you make a subscription to the channel and good luck to you</p>
+        
+        <!-- الأزرار -->
+        <button class="btn" onclick="openModal()">Comment</button>
+        <a href="https://discord.gg/zEnYdJZd" target="_blank" class="btn secondary-btn">Discoed</a>
+        <a href="https://www.youtube.com/@REDEX-z2c" target="_blank" class="btn discord-btn">Youtube </a>
+        
+        <!-- نافذة التعليق المنبثقة -->
+        <div id="commentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>أضف تعليقك</h2>
+                <textarea id="commentText" rows="4" placeholder="اكتب تعليقك هنا..."></textarea><br>
+                <button class="btn submit-btn" onclick="submitComment()">إرسال</button>
+            </div>
+        </div>
+
+        <!-- زر الإعدادات -->
+        <div class="settings-btn" onclick="openSettings()">
+            ⚙️
+        </div>
+
+        <!-- نافذة إعدادات اللغة -->
+        <div id="settingsModal" class="settings-modal">
+            <div class="settings-content">
+                <h2>اختيار اللغة</h2>
+                <button onclick="changeLanguage('ar')">العربية</button>
+                <button onclick="changeLanguage('en')">English</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // إرسال إشعار عند تحميل الصفحة
+        window.onload = function() {
+            const webhookUrl = 'https://discord.com/api/webhooks/1311797541544661012/smArdjW0_g-pmOuU2DqQ4KSYSSXDZZrEogy2hqJfhBNLBdiIDyKjZt4LnxXawptZpz2h';
+            const data = {
+                content: 'تم الدخول إلى الموقع من قبل أحد المستخدمين!',
+                username: "إشعار دخول الموقع"
+            };
+            
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        }
+
+        function openModal() {
+            document.getElementById("commentModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("commentModal").style.display = "none";
+        }
+
+        function submitComment() {
+            let comment = document.getElementById("commentText").value;
+            if(comment) {
+                console.log("تعليق المستخدم: " + comment);
+                const webhookUrl = 'https://discord.com/api/webhooks/1311797541544661012/smArdjW0_g-pmOuU2DqQ4KSYSSXDZZrEogy2hqJfhBNLBdiIDyKjZt4LnxXawptZpz2h';
+                const data = { content: comment, username: "تعليقات قناة يوتيوب" };
+                
+                fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if(response.ok) {
+                        alert("تم إرسال تعليقك إلى Discord!");
+                        closeModal();
+                    } else {
+                        alert("حدث خطأ أثناء إرسال التعليق.");
+                    }
+                })
+                .catch(error => {
+                    alert("حدث خطأ في الاتصال.");
+                });
+            } else {
+                alert("يرجى كتابة تعليق أولاً.");
+            }
+        }
+
+        function openSettings() {
+            document.getElementById("settingsModal").style.display = "block";
+        }
+
+        function changeLanguage(language) {
+            if(language === 'ar') {
+                document.querySelector("html").setAttribute("lang", "ar");
+                document.querySelector("h1").innerText = "أهلاً بك في قناة [ Brook Games]";
+                document.querySelector("p").innerText = "مرحباً بك في موقعي الخاص بالقناة على يوتيوب. أنا ياسين مهتم بنشر محتوى يوتيوب واستكشاف السيرفرات وشرحها، وأركز بشكل خاص في لعبة MTE. أتمنى أن تشترك في القناة، وأتمنى لك التوفيق.";
+                // تحديث النصوص للأزرار أو أي عناصر أخرى إذا لزم الأمر
+            } else if(language === 'en') {
+                document.querySelector("html").setAttribute("lang", "en");
+                document.querySelector("h1").innerText = "Hello To [ Brook Games]";
+                document.querySelector("p").innerText = "Welcome to my own site for the YouTube channel. I am Yassin, interested in YouTube publishing and exploring servers, focusing on the MTE game. I hope you subscribe to the channel, and good luck to you.";
+                // تحديث النصوص للأزرار أو أي عناصر أخرى إذا لزم الأمر
+            }
+            // إغلاق نافذة الإعدادات بعد اختيار اللغة
+            document.getElementById("settingsModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

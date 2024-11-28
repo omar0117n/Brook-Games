@@ -1,0 +1,406 @@
+/* تعيين نمط عام للصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* تعيين صورة الخلفية */
+body {
+    background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تخصيص العنصر الحاوي */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* نصف شفافية الخلفية لجعل النص بارز */
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* تنسيق النص */
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* تخصيص الزر الرئيسي */
+.btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #FF0000; /* اللون الأحمر لليوتيوب */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير عند مرور الفأرة فوق الزر الرئيسي */
+.btn:hover {
+    background-color: #CC0000;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تخصيص الزر الثانوي */
+.secondary-btn {
+    background-color: #0073e6; /* لون أزرق */
+}
+
+.secondary-btn:hover {
+    background-color: #005bb5;
+}
+
+/* تخصيص تأثير الحركة عند التمرير */
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* تعيين نمط عام للصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* تعيين صورة الخلفية */
+body {
+    background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تخصيص العنصر الحاوي */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* نصف شفافية الخلفية لجعل النص بارز */
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 500px; /* تقليص العرض بحيث تكون الحاوية أصغر */
+    width: 90%; /* جعلها أكثر مرونة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 28px; /* تقليص حجم الخط */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* تنسيق النص */
+p {
+    font-size: 18px; /* تقليص حجم الخط */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* تخصيص الزر الرئيسي */
+.btn {
+    padding: 12px 25px; /* تقليص الحجم */
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF0000; /* اللون الأحمر لليوتيوب */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير عند مرور الفأرة فوق الزر الرئيسي */
+.btn:hover {
+    background-color: #CC0000;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تخصيص الزر الثانوي */
+.secondary-btn {
+    background-color: #0073e6; /* لون أزرق */
+}
+
+.secondary-btn:hover {
+    background-color: #005bb5;
+}
+
+/* تخصيص تأثير الحركة عند التمرير */
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* تعيين نمط عام للصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* تعيين صورة الخلفية */
+body {
+    background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تخصيص العنصر الحاوي */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* نصف شفافية الخلفية لجعل النص بارز */
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 500px; /* تقليص العرض بحيث تكون الحاوية أصغر */
+    width: 90%; /* جعلها أكثر مرونة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 28px; /* تقليص حجم الخط */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* تنسيق النص */
+p {
+    font-size: 18px; /* تقليص حجم الخط */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* تخصيص الزر الرئيسي */
+.btn {
+    padding: 12px 25px; /* تقليص الحجم */
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF0000; /* اللون الأحمر لليوتيوب */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير عند مرور الفأرة فوق الزر الرئيسي */
+.btn:hover {
+    background-color: #CC0000;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تخصيص الزر الثانوي */
+.secondary-btn {
+    background-color: #0073e6; /* لون أزرق */
+}
+
+.secondary-btn:hover {
+    background-color: #005bb5;
+}
+
+/* تخصيص زر ديسكورد */
+.discord-btn {
+    background-color: #7289da; /* اللون الخاص بديسكورد */
+}
+
+.discord-btn:hover {
+    background-color: #5a6eb7; /* اللون عند التمرير */
+}
+
+/* تخصيص تأثير الحركة عند التمرير */
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+/* تعيين نمط عام للصفحة */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* تعيين صورة الخلفية */
+body {
+    background-image: url('https://th.bing.com/th/id/R.4a6150f550a9f9f720e9b89abd16f78d?rik=bhgq5ARY6Cb5lw&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تخصيص العنصر الحاوي */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* نصف شفافية الخلفية لجعل النص بارز */
+    padding: 40px 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%; /* جعلها أكثر مرونة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تنسيق العنوان */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* تنسيق النص */
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* تخصيص الزر الرئيسي */
+.btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF0000; /* اللون الأحمر لليوتيوب */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* تأثير عند مرور الفأرة فوق الزر الرئيسي */
+.btn:hover {
+    background-color: #CC0000;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* تخصيص الزر الثانوي */
+.secondary-btn {
+    background-color: #0073e6; /* لون أزرق */
+}
+
+.secondary-btn:hover {
+    background-color: #005bb5;
+}
+
+/* تخصيص زر ديسكورد */
+.discord-btn {
+    background-color: #7289da;
+}
+
+.discord-btn:hover {
+    background-color: #5a6eb7;
+}
+
+/* تخصيص نافذة التعليق المنبثقة */
+.modal {
+    display: none; /* في البداية تكون مخفية */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* خلفية داكنة خلف النافذة */
+}
+
+/* محتوى النافذة المنبثقة */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* زر إغلاق النافذة */
+.close-btn {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* تصميم زر إرسال التعليق */
+.submit-btn {
+    background-color: #4CAF50; /* أخضر */
+    padding: 12px 25px;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* تخصيص تأثير الحركة عند التمرير */
+.container:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
